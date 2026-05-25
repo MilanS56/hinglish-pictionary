@@ -1,0 +1,234 @@
+HINGLISH PICTIONARY — NEW LAPTOP SETUP GUIDE
+==================================================
+
+STEP 1 — Install Required Software
+----------------------------------
+
+1. Install Node.js LTS
+Download:
+https://nodejs.org/en
+
+Recommended Version:
+Node.js 22 LTS
+
+--------------------------------------------------
+
+2. Install Git
+Download:
+https://git-scm.com/downloads
+
+Verify:
+git --version
+
+--------------------------------------------------
+
+3. Install Docker Desktop
+Download:
+https://www.docker.com/products/docker-desktop/
+
+IMPORTANT:
+- Enable WSL2 integration during installation.
+- Restart system after installation.
+
+Verify:
+docker --version
+docker compose version
+
+Test Docker:
+docker run hello-world
+
+--------------------------------------------------
+
+4. Install pnpm Globally
+
+Run:
+npm install -g pnpm
+
+Verify:
+pnpm -v
+
+If pnpm command does not work:
+- Restart terminal
+- Or restart PC
+
+--------------------------------------------------
+
+STEP 2 — Clone the Repository
+-----------------------------
+
+Run:
+git clone <YOUR_GITHUB_REPO_URL>
+
+Example:
+git clone https://github.com/your-username/hinglish-pictionary.git
+
+--------------------------------------------------
+
+STEP 3 — Open Project Folder
+----------------------------
+
+Run:
+cd hinglish-pictionary
+
+--------------------------------------------------
+
+STEP 4 — Install All Dependencies
+---------------------------------
+
+At project root run:
+pnpm install
+
+This installs:
+- frontend dependencies
+- backend dependencies
+- workspace packages
+- shared packages
+
+--------------------------------------------------
+
+STEP 5 — Start Docker Infrastructure
+------------------------------------
+
+At project root run:
+docker compose up -d
+
+This starts:
+- Redis
+- MongoDB
+
+Verify:
+docker ps
+
+You should see:
+- redis container
+- mongodb container
+
+--------------------------------------------------
+
+STEP 6 — Start Backend Server
+-----------------------------
+
+Open Terminal 1:
+
+cd apps/server
+
+Run:
+pnpm run dev
+
+Expected:
+Server running on port 3001
+
+--------------------------------------------------
+
+STEP 7 — Start Frontend
+-----------------------
+
+Open Terminal 2:
+
+cd apps/client
+
+Run:
+pnpm run dev
+
+Expected:
+Frontend running on:
+http://localhost:5173
+
+--------------------------------------------------
+
+STEP 8 — Git Workflow
+---------------------
+
+Before switching laptops ALWAYS:
+
+git add .
+git commit -m "your message"
+git push
+
+--------------------------------------------------
+
+On Another Laptop
+-----------------
+
+Run:
+git pull
+
+OR if first setup:
+
+git clone <repo-url>
+
+--------------------------------------------------
+
+STEP 9 — Useful Docker Commands
+-------------------------------
+
+Start containers:
+docker compose up -d
+
+Stop containers:
+docker compose down
+
+View running containers:
+docker ps
+
+View logs:
+docker logs <container-id>
+
+--------------------------------------------------
+
+STEP 10 — Recommended Daily Workflow
+------------------------------------
+
+1. Pull latest code
+2. Start Docker containers
+3. Start backend
+4. Start frontend
+5. Work on feature branch
+6. Commit changes
+7. Push to GitHub
+
+--------------------------------------------------
+
+PROJECT STRUCTURE
+-----------------
+
+hinglish-pictionary/
+│
+├── apps/
+│   ├── client/
+│   └── server/
+│
+├── packages/
+│   └── shared/
+│
+├── docker-compose.yml
+├── pnpm-workspace.yaml
+└── tsconfig.base.json
+
+--------------------------------------------------
+
+TECH STACK
+----------
+
+Frontend:
+- React
+- Tailwind CSS
+- Socket.io Client
+
+Backend:
+- Node.js
+- Express
+- Socket.io
+
+Realtime Infrastructure:
+- Redis
+
+Database:
+- MongoDB
+
+DevOps:
+- Docker
+- GitHub
+- pnpm Monorepo
+
+==================================================
