@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/git 
+.pnpm-store/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Build outputs
+.next/
+dist/
+build/
+coverage/
+out/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Local tooling
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
