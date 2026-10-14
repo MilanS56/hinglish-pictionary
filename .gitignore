@@ -13,7 +13,7 @@ dist/
 build/
 coverage/
 out/
-
+*.tsbuildinfo
 # Logs
 *.log
 npm-debug.log*
