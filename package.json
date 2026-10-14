@@ -1,0 +1,13 @@
+{
+  "name": "hinglish-pictionary",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@12.11.2",
+  "scripts": {
+    "dev:web": "pnpm --filter @hinglish-pictionary/web dev",
+    "dev:server": "pnpm --filter @hinglish-pictionary/server start:dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test"
+  }
+}

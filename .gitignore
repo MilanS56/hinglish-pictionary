@@ -1,5 +1,5 @@
 # Dependencies
-node_modules/git 
+node_modules/
 .pnpm-store/
 
 # Environment variables and secrets
